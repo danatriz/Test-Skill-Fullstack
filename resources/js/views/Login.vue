@@ -13,7 +13,7 @@
 </template>
 <script>
 import { useAuthStore } from "../store/useAuthStore";
-//import Swal from "sweetalert2"; // Import SweetAlert
+import Swal from "sweetalert2"; // Import SweetAlert
 
 export default {
     name: "Login",
