@@ -1,4 +1,4 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -11,14 +11,22 @@
     {{-- Title --}}
     <title>{{ config('app.name') }}</title>
     {{-- Vite --}}
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @vite([
+
+    'resources/css/app.css',
+    'resources/assets/css/icons.css',
+    'resources/js/app.js',
+    'resources/assets/libs/simplebar/simplebar.min.js',
+    'resources/assets/libs/chart.js/chart.min.js',
+    'resources/assets/libs/apexcharts/apexcharts.min.js',
+    'resources/assets/libs/echarts/echarts.min.js',
+    'resources/assets/js/main.js',
+    ])
 </head>
 
-<body>
+<body data-layout-mode="light" class="bg-gray-100 dark:bg-gray-900 bg-custom dark:bg-custom">
     <div id="app">
-        {{-- Vue Will Be Injected Here --}}
     </div>
-
 </body>
 
 </html>
