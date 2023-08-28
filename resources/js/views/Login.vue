@@ -1,7 +1,7 @@
-+<template>
+<template>
     <div>
         <h1>Login Page</h1>
-        <form @submit.prevent="login">
+        <form @submit.prevent="handleLogin">
             <label for="credentials">Email/Username:</label>
             <input type="text" v-model="credentials" required />
             <label for="password">Password:</label>
@@ -11,9 +11,9 @@
         <p v-if="errors" style="color: red">{{ errors }}</p>
     </div>
 </template>
-
 <script>
 import { useAuthStore } from "../store/useAuthStore";
+//import Swal from "sweetalert2"; // Import SweetAlert
 
 export default {
     name: "Login",
@@ -21,22 +21,35 @@ export default {
         return {
             credentials: "",
             password: "",
+            success: "",
             errors: "",
         };
     },
     methods: {
-        async login() {
-            const credentials = this.credentials;
-            const password = this.password;
-            const authStore = useAuthStore();
-
-            const success = await authStore.login(credentials, password);
+        async handleLogin() {
+            const success = await useAuthStore().login(
+                this.credentials,
+                this.password
+            );
 
             if (success) {
-                // Redirect to dashboard or other page after successful login
-                this.$router.push({ name: "Dashboard" });
+                 // Show success message using SweetAlert
+                 const message = useAuthStore().getSuccess;
+                Swal.fire({
+                    icon: "success",
+                    title: "Login Successful",
+                    text: message,
+                });
+
+                this.$router.push("/dashboard");
             } else {
-                this.errors = authStore.getErrors;
+                const message = useAuthStore().getErrors;
+                // Show error message using SweetAlert
+                Swal.fire({
+                    icon: "error",
+                    title: "Login Failed",
+                    text: message,
+                });
             }
         },
     },
