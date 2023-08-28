@@ -128,7 +128,7 @@
                         >
                             <router-link
                                 to="/login"
-                                class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-green-600 to-lime-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-green-700 hover:to-lime-700"
+                                class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-green-500 to-green-700 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-green-700 hover:to-green-500"
                                 >Login</router-link
                             >
                         </div>
@@ -226,7 +226,7 @@
                                     <div class="mt-6">
                                         <router-link
                                             to="/login"
-                                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-green-600 to-lime-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-green-700 hover:to-lime-700"
+                                            class="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-green-500 to-green-700 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-green-700 hover:to-green-500"
                                             >Login</router-link
                                         >
                                     </div>
@@ -252,11 +252,11 @@
                                     >
                                         <span class="block">Menyediakan</span>
                                         <span
-                                            class="block bg-gradient-to-r from-green-800 to-lime-700 bg-clip-text text-transparent sm:pb-5 mt-5"
+                                            class="block bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent sm:pb-5 mt-5"
                                             >Hosting Terbaik</span
                                         >
                                         <span
-                                            class="block bg-gradient-to-r from-green-600 to-lime-700 bg-clip-text text-transparent sm:pb-5"
+                                            class="block bg-gradient-to-r from-green-400 to-lime-500 bg-clip-text text-transparent sm:pb-5"
                                             >Untuk Website Anda</span
                                         >
                                     </h1>
@@ -271,7 +271,7 @@
                                     <div class="mt-6">
                                         <router-link
                                             to="/dashboard"
-                                            class="inline-flex rounded-md border border-transparent bg-gradient-to-r from-green-600 to-lime-600 bg-origin-border px-8 py-2 text-base font-medium text-white shadow-sm hover:from-green-700 hover:to-lime-700"
+                                            class="inline-flex rounded-md border border-transparent bg-gradient-to-r from-green-500 to-green-700 bg-origin-border px-8 py-2 text-base font-medium text-white shadow-sm hover:from-green-700 hover:to-green-500"
                                             >Get started</router-link
                                         >
                                     </div>
