@@ -100,7 +100,7 @@ git clone https://github.com/danatriz/Test-Skill-Fullstack.git
 cd fullstack
 ```
 
-3. Instal dependency PHP menggunakan Composer:
+3. Install dependency PHP menggunakan Composer:
 
 ```
 composer install
