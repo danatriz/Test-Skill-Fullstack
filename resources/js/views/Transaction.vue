@@ -20,11 +20,26 @@
                 <div class="card">
                     <div class="card-header flex justify-between items-center">
                         <h3 class="card-title">Transaction Table</h3>
-                        <button
-                            class="px-3 py-2 lg:px-4 bg-blue-500 text-white text-sm font-semibold rounded hover:bg-blue-600"
-                        >
-                            Create New
-                        </button>
+                        <div class="flex items-center">
+                            <input
+                                v-model="searchQuery"
+                                @input="performSearch"
+                                class="px-3 py-2 border rounded-md focus:outline-none"
+                                placeholder="Search products..."
+                            />
+                            <button
+                                class="ml-3 px-3 py-2 bg-blue-500 text-white text-sm font-semibold rounded hover:bg-blue-600"
+                                @click="clearSearch"
+                            >
+                                Clear
+                            </button>
+                            <button
+                                class="ml-3 px-3 py-2 bg-green-500 text-white text-sm font-semibold rounded hover:bg-green-600"
+                                @click="createNewProduct"
+                            >
+                                Create New
+                            </button>
+                        </div>
                     </div>
                     <!--end card-header-->
                     <div class="card-body">
@@ -205,7 +220,6 @@ export default {
     name: "Transaction",
     components: {
         Navbar,
-        Footer,
         Breadcrumb,
     },
     setup() {

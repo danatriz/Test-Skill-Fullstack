@@ -8,12 +8,7 @@
             >
                 <div class="flex items-center">
                     <a href="#" class="flex items-center outline-none">
-                        <img src="@images/logo-sm.png" alt="" class="h-6" />
-                        <img
-                            src="@images/logo.png"
-                            alt=""
-                            class="ml-2 hidden xl:block mt-1"
-                        />
+                        <img src="@images/new-logo.png" alt="" class="h-6" />
                     </a>
                 </div>
 

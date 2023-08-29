@@ -3,7 +3,7 @@
         class="relative flex flex-col justify-center min-h-screen overflow-hidden"
     >
         <div
-            class="w-full m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md"
+            class="w-full m-auto bg-whit bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md"
         >
             <div
                 class="text-center p-6 bg-gradient-to-r from-green-500 to-green-700 rounded-t"

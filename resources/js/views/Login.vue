@@ -8,7 +8,7 @@
             <div class="text-center p-6 bg-white-900 rounded-t">
                 <router-link to="/"
                     ><img
-                        src="@images/logo-sm.png"
+                        src="@images/new-logo.png"
                         alt=""
                         class="w-14 h-14 mx-auto mb-2"
                 /></router-link>
