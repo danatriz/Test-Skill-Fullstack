@@ -137,7 +137,7 @@ export default {
                     icon: true,
                     rtl: false,
                 });
-                window.location.href = "/dashboard";
+                window.location.href = "/product";
             } else {
                 const message = useAuthStore().getErrors;
                 this.toast.error(message, {

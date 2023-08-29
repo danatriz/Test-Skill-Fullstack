@@ -25,7 +25,7 @@
                         class="font-body text-white mt-4 flex flex-col font-medium md:mt-0 md:flex-row md:text-sm md:font-medium space-x-0 md:space-x-4 lg:space-x-6 xl:space-x-8 navbar"
                     >
                         <!-- ! BEGIN : Dashbaord Dropdown -->
-                        <li class="dropdown">
+                        <!---<li class="dropdown">
                             <button
                                 id="navDashboardLink"
                                 data-dropdown-toggle="navDashboard"
@@ -39,7 +39,7 @@
                                     class="ti ti-chevron-down ml-auto lg:ml-1"
                                 ></i>
                             </button>
-                            <!-- Dropdown menu -->
+                            
                             <div
                                 id="navDashboard"
                                 class="dropdown-menu z-10 my-1 hidden w-full list-none divide-y divide-gray-100 rounded bg-gray-800 md:bg-white text-base shadow border border-slate-700 md:border-white dark:border-slate-700/50 dark:divide-gray-600 dark:bg-gray-900 md:w-44 dropdown-menu"
@@ -61,7 +61,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li>-->
                         <!-- ! END : Dashbaord Dropdown -->
                         <!-- !BEGIN: Product Dropdown -->
                         <li class="dropdown">
@@ -72,46 +72,8 @@
                             >
                                 <i class="ti ti-bucket mr-1 pb-1 text-lg"></i>
                                 Product
-                                <i
-                                    class="ti ti-chevron-down ml-auto lg:ml-1"
-                                ></i>
+
                             </button>
-                            <!-- Dropdown menu -->
-                            <div
-                                id="navApps"
-                                class="dropdown-menu z-10 my-1 hidden w-full list-none divide-y divide-gray-100 rounded bg-gray-800 md:bg-white text-base shadow dark:divide-gray-600 border border-slate-700 md:border-white dark:border-slate-700/50 dark:bg-gray-900 md:w-44 dropdown-menu"
-                            >
-                                <ul class="py-1">
-                                    <li>
-                                        <router-link
-                                            to="/product"
-                                            class="nav-link dark:hover:bg-slate-800/70"
-                                            >Tampil Produk</router-link
-                                        >
-                                    </li>
-                                    <li>
-                                        <router-link
-                                            to="/product"
-                                            class="nav-link dark:hover:bg-slate-800/70"
-                                            >Tambah Produk</router-link
-                                        >
-                                    </li>
-                                    <li>
-                                        <router-link
-                                            to="/product"
-                                            class="nav-link dark:hover:bg-slate-800/70"
-                                            >Ubah Produk</router-link
-                                        >
-                                    </li>
-                                    <li>
-                                        <router-link
-                                            to="/product"
-                                            class="nav-link dark:hover:bg-slate-800/70"
-                                            >Hapus Produk</router-link
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <!-- !END: Product Dropdown -->
                         <!-- !BEGIN: Transaction Dropdown -->
