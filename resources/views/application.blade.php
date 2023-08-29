@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png" sizes="32x32">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
+    {{-- Fonts --}}
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- Title --}}

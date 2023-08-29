@@ -3,7 +3,8 @@ import { useAuthStore } from "../store/useAuthStore";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Dashboard from "../views/Dashboard.vue";
-import NotFound from "../views/NotFound.vue"; // Assuming you have a NotFound component
+import Product from "../views/Product.vue";
+import NotFound from "../views/NotFound.vue";
 
 const isLoggedIn = () => {
     return useAuthStore().getToken() !== null;
@@ -16,7 +17,7 @@ const isGuest = () => {
 const routes = [
     {
         name: "login",
-        path: "/login", // Update the path to "/login"
+        path: "/login",
         component: Login,
         meta: {
             middleware: isGuest,
@@ -39,6 +40,15 @@ const routes = [
         meta: {
             middleware: isLoggedIn,
             title: "Dashboard",
+        },
+    },
+    {
+        name: "product",
+        path: "/product",
+        component: Product,
+        meta: {
+            middleware: isLoggedIn,
+            title: "Product",
         },
     },
     {

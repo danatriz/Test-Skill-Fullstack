@@ -5,7 +5,7 @@ import router from "./router";
 import App from "./App.vue";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
-
+import VueTableLite from "vue3-table-lite";
 // * Create pinia instance
 const pinia = createPinia();
 // * Create vue app

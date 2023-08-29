@@ -1,50 +1,10 @@
 <template>
     <div>
         <Navbar />
-        <!-- !BEGIN: Breadcrumb -->
-        <div class="container mx-auto px-2">
-            <div class="flex flex-wrap">
-                <div class="flex items-center py-4 w-full">
-                    <div class="w-full">
-                        <div class="">
-                            <div class="flex flex-wrap justify-between">
-                                <div class="items-center">
-                                    <h1
-                                        class="font-semibold text-xl mb-0 block dark:text-slate-100"
-                                    >
-                                        Dashboard
-                                    </h1>
-                                    <ol class="list-reset flex text-sm">
-                                        <li>
-                                            <router-link
-                                                to="/"
-                                                class="text-gray-500"
-                                                >Data Andalan Utama</router-link
-                                            >
-                                        </li>
-                                        <li>
-                                            <span class="text-gray-500 mx-2"
-                                                >/</span
-                                            >
-                                        </li>
-
-                                        <li>
-                                            <router-link
-                                                to="/dashboard"
-                                                class="text-blue-600 hover:text-blue-700"
-                                                >Dashboard</router-link
-                                            >
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- !END: Breadcrumb -->
-
+        <Breadcrumb
+            :pageTitle="'Dashboard'"
+            :breadcrumbItems="breadcrumbItems"
+        />
         <div
             class="container mx-auto px-2 min-h-[calc(100vh-138px)] relative pb-14"
         >
@@ -185,16 +145,22 @@ import Swal from "sweetalert2";
 import { useToast } from "vue-toastification";
 import Navbar from "../components/Navbar.vue";
 //import Footer from "../components/Footer.vue";
+import Breadcrumb from "../components/Breadcrumb.vue";
 
 export default {
     name: "Dashboard",
     components: {
         Navbar,
         //Footer,
+        Breadcrumb,
     },
     data() {
         return {
             isFirstTimeRedirect: true,
+            breadcrumbItems: [
+                { label: "Data Andalan Utama", to: "/" },
+                { label: "Dashboard", to: "/dashboard" },
+            ],
         };
     },
     setup() {

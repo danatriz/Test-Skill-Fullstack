@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav
-            class="border-gray-200 bg-gray-900 px-2.5 py-2.5 shadow-sm dark:bg-slate-800 sm:px-4 block print:hidden"
+            class="border-red-200 bg-red-900 px-2.5 py-2.5 shadow-sm light:bg-slate-800 sm:px-4 block print:hidden"
         >
             <div
                 class="container mx-0 flex max-w-full flex-wrap items-center lg:mx-auto"
@@ -83,31 +83,31 @@
                             >
                                 <ul class="py-1">
                                     <li>
-                                        <a
-                                            href="inbox.html"
+                                        <router-link
+                                            to="/product"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Tampil Produk</a
+                                            >Tampil Produk</router-link
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="email-read.html"
+                                        <router-link
+                                            to="/product"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Tambah Produk</a
+                                            >Tambah Produk</router-link
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="chat.html"
+                                        <router-link
+                                            to="/product"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Ubah Produk</a
+                                            >Ubah Produk</router-link
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="contact-list.html"
+                                        <router-link
+                                            to="/product"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Hapus Produk</a
+                                            >Hapus Produk</router-link
                                         >
                                     </li>
                                 </ul>
@@ -134,31 +134,31 @@
                             >
                                 <ul class="py-1">
                                     <li>
-                                        <a
-                                            href="inbox.html"
+                                        <router-link
+                                            to="/transaction"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Tampil Transaction</a
+                                            >Tampil Transaction</router-link
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="email-read.html"
+                                        <router-link
+                                            to="/transaction"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Tambah Transaction</a
+                                            >Tambah Transaction</router-link
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="chat.html"
+                                        <router-link
+                                            to="/transaction"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Ubah Transaction</a
+                                            >Ubah rransaction</router-link
                                         >
                                     </li>
                                     <li>
-                                        <a
-                                            href="contact-list.html"
+                                        <router-link
+                                            to="/transaction"
                                             class="nav-link dark:hover:bg-slate-800/70"
-                                            >Hapus Transaction</a
+                                            >Hapus Transactirn</router-link
                                         >
                                     </li>
                                 </ul>
