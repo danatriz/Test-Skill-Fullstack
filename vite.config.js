@@ -30,6 +30,8 @@ export default defineConfig({
         alias: {
             "@": "/resources/js",
             "@assets": "/resources/assets",
+            "@store": "/resources/js/store",
+            "@components": "/resources/js/components",
             "@images": "/resources/assets/images",
         },
     },

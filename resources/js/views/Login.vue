@@ -3,67 +3,82 @@
         class="relative flex flex-col justify-center min-h-screen overflow-hidden"
     >
         <div
-            class="w-full m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md"
+            class="w-full m-auto bg-white dark:bg-green-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md"
         >
-            <div
-                class="text-center p-6 bg-gradient-to-r from-green-500 to-green-700 rounded-t"
-            >
+            <div class="text-center p-6 bg-slate-900 rounded-t">
                 <router-link to="/"
                     ><img
-                        src="@images/new-logo.png"
+                        src="@images/logo-sm.png"
                         alt=""
                         class="w-14 h-14 mx-auto mb-2"
                 /></router-link>
-                <h3 class="font-semibold text-gray-900 text-xl mb-1">
+                <h3 class="font-semibold text-white text-xl mb-1">
                     Masuk Akun
                 </h3>
-                <p class="text-sm text-gray-700">
+                <p class="text-xs text-slate-400">
                     Buat kamu yang sudah terdaftar, silakan masuk ke akunmu.
                 </p>
             </div>
 
             <form class="p-6" @submit.prevent="handleLogin">
+                <!-- ! BEGIN : Credentials -->
                 <div>
-                    <label
-                        for="credentials"
-                        class="block text-sm font-medium text-gray-700"
+                    <label for="credentials" class="label"
                         >Username, email atau nomor telepon</label
                     >
                     <input
                         id="credentials"
-                        v-model="credentials"
                         type="text"
+                        v-model="credentials"
+                        class="form-control dark:bg-slate-800/60 dark:border-slate-700/50"
                         placeholder="Masukkan Username, email atau nomor telepon"
-                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm mt-1"
                         required
                         autofocus
                     />
                 </div>
+                <!-- ! END : Credentials -->
 
-                <div class="mt-2">
-                    <label
-                        for="password"
-                        class="block text-sm font-medium text-gray-700"
-                        >Password</label
-                    >
+                <!-- ! BEGIN : Password -->
+                <div class="mt-4">
+                    <label for="password" class="label">Password</label>
                     <input
                         id="password"
-                        v-model="password"
                         type="password"
-                        placeholder="Masukkan password"
+                        v-model="password"
+                        class="form-control dark:bg-slate-800/60 dark:border-slate-700/50"
+                        placeholder="*********"
                         required
-                        class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm mt-1"
                     />
                 </div>
+                <!-- ! END : Password -->
 
-                <a href="#" class="text-xs text-gray-600 hover:underline"
-                    >Lupa Password?</a
+                <!-- ! BEGIN : Forget Password -->
+                <router-link
+                    to="#"
+                    class="text-xs text-gray-600 hover:underline"
+                    >Lupa password?</router-link
                 >
-
-                <div class="mt-5">
+                <!-- ! END : Forget Password -->
+                <!-- ! BEGIN : Remember Me -->
+                <div class="block mt-3">
+                    <label class="custom-label">
+                        <div
+                            class="bg-white dark:bg-slate-700 dark:border-slate-600 border border-slate-200 rounded w-4 h-4 inline-block leading-4 text-center -mb-[3px]"
+                        >
+                            <input type="checkbox" class="hidden" />
+                            <i
+                                class="fas fa-check hidden text-xs text-slate-700 dark:text-slate-300"
+                            ></i>
+                        </div>
+                        <span class="text-sm text-slate-500 font-medium"
+                            >Ingat saya</span
+                        >
+                    </label>
+                </div>
+                <!-- ! END : Remember Me -->
+                <div class="mt-6">
                     <button
-                        type="submit"
-                        class="flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                        class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                     >
                         Login
                     </button>
@@ -73,7 +88,7 @@
                 Belum punya akun?
                 <router-link
                     to="/register"
-                    class="font-medium text-green-600 hover:underline"
+                    class="font-medium text-blue-600 hover:underline"
                     >Daftarkan Dirimu</router-link
                 >
             </p>
@@ -122,7 +137,7 @@ export default {
                     icon: true,
                     rtl: false,
                 });
-                this.$router.push("/dashboard");
+                window.location.href = "/dashboard";
             } else {
                 const message = useAuthStore().getErrors;
                 this.toast.error(message, {

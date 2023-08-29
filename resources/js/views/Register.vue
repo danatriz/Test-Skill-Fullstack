@@ -189,7 +189,6 @@ export default {
             name: "",
             username: "",
             email: "",
-            phone_number: "",
             password: "",
             password_confirmation: "",
             terms_and_conditions: false,
@@ -207,7 +206,6 @@ export default {
                 name: this.name,
                 username: this.username,
                 email: this.email,
-                phone_number: this.phone_number,
                 password: this.password,
                 password_confirmation: this.password_confirmation,
             };

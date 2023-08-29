@@ -20,7 +20,7 @@
     'resources/assets/libs/chart.js/chart.min.js',
     'resources/assets/libs/apexcharts/apexcharts.min.js',
     'resources/assets/libs/echarts/echarts.min.js',
-    // 'resources/assets/js/main.js',
+    'resources/assets/js/main.js',
     ])
 </head>
 

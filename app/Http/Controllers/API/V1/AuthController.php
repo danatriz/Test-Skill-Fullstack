@@ -19,7 +19,7 @@ class AuthController extends Controller
             $credentials = $request->input('credentials');
             $input = filter_var($credentials, FILTER_VALIDATE_EMAIL)
                 ? 'email'
-                : (ctype_digit($credentials) ? 'phone_number' : 'username');
+                : (ctype_digit($credentials) ? :'username');
 
             // * Validate Request
             $validator = Validator::make($request->all(), [
@@ -79,9 +79,7 @@ class AuthController extends Controller
                 'name' => 'required',
                 'username' => 'required|unique:users',
                 'email' => 'required|email|unique:users',
-                'phone_number' => 'unique:users',
                 'password' => 'required|min:6|confirmed',
-                'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
             ]);
 
             // * Check Validation
@@ -114,25 +112,12 @@ class AuthController extends Controller
                 $imagePath = 'images/user/default.png';
             }
 
-            // * Check if phone number starts with '0' or '8'
-            $phone_number = $request->phone_number;
-            // * Remove non-numeric characters
-            $phone_number = preg_replace('/[^0-9]/', '', $phone_number);
-            if (substr($phone_number, 0, 1) === '0' || substr($phone_number, 0, 1) === '8') {
-                // * Replace leading '0' or '8' with '62'
-                $phone_number = '62' . substr($phone_number, 1);
-            } else {
-                $phone_number = null;
-            }
-
             // * Create User
             $user = User::create([
                 'name' => $request->name,
                 'username' => $request->username,
-                'phone_number' => $phone_number,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'image' => $imagePath,
                 'email_verified_at' => now(),
                 'remember_token' => Str::random(10),
             ]);

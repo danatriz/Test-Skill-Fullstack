@@ -1,53 +1,34 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "../store/useAuthStore";
-import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Dashboard from "../views/Dashboard.vue";
+import NotFound from "../views/NotFound.vue"; // Assuming you have a NotFound component
 
 const isLoggedIn = () => {
-    return useAuthStore().getToken !== null;
+    return useAuthStore().getToken() !== null;
 };
 
 const isGuest = () => {
-    return useAuthStore().getToken === null;
+    return useAuthStore().getToken() === null;
 };
 
 const routes = [
     {
-        name: "home",
-        path: "/",
-        component: Home,
-        meta: {
-            title: "Home",
-        },
-    },
-
-    {
         name: "login",
-        path: "/login",
+        path: "/login", // Update the path to "/login"
         component: Login,
         meta: {
-            middleware: "isGuest",
+            middleware: isGuest,
             title: "Login",
         },
     },
-    {
-    name: "register",
-        path: "/register",
-        component: Register,
-        meta: {
-            middleware: "isGuest",
-            title: "Register",
-        },
-    },
-
     {
         name: "register",
         path: "/register",
         component: Register,
         meta: {
-            middleware: "isGuest",
+            middleware: isGuest,
             title: "Register",
         },
     },
@@ -56,9 +37,22 @@ const routes = [
         path: "/dashboard",
         component: Dashboard,
         meta: {
-            middleware: "isLoggedIn",
+            middleware: isLoggedIn,
             title: "Dashboard",
         },
+    },
+    {
+        name: "root",
+        path: "/",
+        component: Login,
+        meta: {
+            middleware: isGuest,
+            title: "Login",
+        },
+    },
+    {
+        path: "/:catchAll(.*)",
+        component: NotFound,
     },
 ];
 
@@ -81,7 +75,7 @@ router.beforeEach((to, from, next) => {
         const token = useAuthStore().getToken;
 
         if (middleware.includes("isLoggedIn") && !token) {
-            next("/login");
+            next("/");
         } else {
             next();
         }
@@ -91,4 +85,3 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router;
-
