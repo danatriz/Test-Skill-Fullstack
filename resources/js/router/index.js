@@ -4,6 +4,7 @@ import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Product from "../views/Product.vue";
+import Transaction from "../views/Transaction.vue";
 import NotFound from "../views/NotFound.vue";
 
 const isLoggedIn = () => {
@@ -49,6 +50,15 @@ const routes = [
         meta: {
             middleware: isLoggedIn,
             title: "Product",
+        },
+    },
+    {
+        name: "transaction",
+        path: "/transaction",
+        component: Transaction,
+        meta: {
+            middleware: isLoggedIn,
+            title: "Transaction",
         },
     },
     {

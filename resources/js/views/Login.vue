@@ -5,7 +5,7 @@
         <div
             class="w-full m-auto bg-white dark:bg-green-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md"
         >
-            <div class="text-center p-6 bg-slate-900 rounded-t">
+            <div class="text-center p-6 bg-white-900 rounded-t">
                 <router-link to="/"
                     ><img
                         src="@images/logo-sm.png"
@@ -16,7 +16,7 @@
                     Masuk Akun
                 </h3>
                 <p class="text-xs text-slate-400">
-                    Buat kamu yang sudah terdaftar, silakan masuk ke akunmu.
+                    Jika sudah memiliki akun, silahkan masuk
                 </p>
             </div>
 
@@ -89,7 +89,7 @@
                 <router-link
                     to="/register"
                     class="font-medium text-blue-600 hover:underline"
-                    >Daftarkan Dirimu</router-link
+                    >Daftar Akun</router-link
                 >
             </p>
         </div>
